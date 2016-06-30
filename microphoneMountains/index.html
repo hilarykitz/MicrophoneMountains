@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+	<title>MICROPHONE</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<script type="text/javascript" src="./build/Tone.min.js"></script>
+	<script src="./build/jquery.min.js"></script>
+	<script type="text/javascript" src="./scripts/draggabilly.js"></script>
+	<script type="text/javascript" src="./scripts/Interface.js"></script>
+	<script type="text/javascript">
+		// jshint ignore: start
+	</script>
+
+
+</head>
+<body>
+	<style type="text/css">
+		@import url(http://fonts.googleapis.com/css?family=Lato:100,400);
+		body {font:400 15px "Lato"; 
+		background:#333; 
+		transition: background 0.3s ease-in;
+		margin:0; }
+		body.bright {background:turquoise;}
+		canvas {
+			width: 100%;
+			height: 100vh;
+			background-color: transparent;
+		}
+		canvas.overlay1 {margin-top:-100vh; background:transparent;}
+		#TopBar {display:none;}
+		.Button, #Title {
+		   width: 140px;
+		    position: fixed;
+		    padding: 6px;
+		    margin: auto auto;
+		    left:0;right:0;bottom:60px;
+		    color: white;
+		    text-align: center;
+		    border:2px white solid;
+		}
+
+		#Title {width:100%; margin-top:-5px; border:none; position:relative;}
+
+	</style>
+	<div id="Content" class="FullScreen hive">
+	<script type="text/javascript">
+		var mic = new Tone.Microphone(), micReady;
+		var analyser = new Tone.Analyser({
+			"type" : 'fft',
+			"size" : 256,
+			"smoothing": 80,
+			"maxDecibels":220,
+			"minDecibels": -80
+		});
+
+		mic.connect(analyser);
+
+$(document).ready(function(){
+			$("input").each(function(){
+				if ($(this).attr('checked') === true) {
+					var waveVal = $(this).val();
+				}});
+		   $("input").change(function(){
+	        	waveVal = $(this).val();
+	        	reWire(waveVal);
+	        });
+
+	   	});
+
+
+			//indicate if the microphone is supported or not
+			if (!Tone.Microphone.supported){
+				$("<div>", {
+					"id" : "NotSupported",
+					"text" : "getUserMedia is not supported by your browser."
+				}).appendTo("#Content");
+			} else {
+
+				mic.open(function(){
+
+					var canvas = $("<canvas>").appendTo("#Content");
+					var canvas2 = $("<canvas>").appendTo("#Content").attr('class','overlay1');
+
+					var context = canvas.get(0).getContext("2d");
+					var context2 = canvas2.get(0).getContext("2d");
+
+					context.canvas.width = canvas.width();
+					context.canvas.height = canvas.height();
+					context2.canvas.width = canvas.width();
+					context2.canvas.height = canvas.height();
+
+
+					function drawLoop(){
+						var canvasWidth = context.canvas.width;
+						var canvasHeight = context.canvas.height;
+						var canvas2Width = context2.canvas.width;
+						var canvas2Height = context2.canvas.height;
+						var midWin = (window.innerHeight) / 2;
+						requestAnimationFrame(drawLoop);
+						//draw the waveform
+						context.clearRect(0, 0, canvasWidth, canvasHeight);
+						context2.clearRect(0, 0, canvasWidth, canvasHeight);
+						var values = analyser.analyse();
+						context.beginPath();
+						context.lineJoin = "round";
+						context.lineWidth = 1;
+						context.strokeStyle = "white";
+						context.fillStyle = "white";
+						context.moveTo(0, canvasHeight - (midWin));
+						context2.moveTo(0, canvasHeight - (midWin + 50));
+						context2.lineJoin = "round";
+						context2.lineWidth = 0.35;
+						context2.strokeStyle = 'rgba(255,77,35,0.5)';
+						context2.fillStyle = 'rgba(255,77,35,0.05)';
+						
+						for (var i = 1, len = values.length; i < len; i++){
+							var val = values[i] / 252;
+							var x = canvasWidth * ((3.5*i) / (len - 5));
+							var x2 = canvas2Width * ((3.5*i) / (len - 15));
+							var y = (-3.5*val) * canvasHeight + midWin;
+							var y2 = ((3.5*val) * canvas2Height) + (midWin - 50);
+							context.lineTo(x, y);
+							context2.lineTo(x2, y2);
+						}
+						context2.stroke();
+						context2.fill();
+						context.fill();
+						context.stroke();
+
+					}
+					drawLoop();
+					
+					new Interface.Button({
+						type : "toggle",
+						text : "Start Mic",
+						activeText : "Stop Mic",
+						start : function(){
+							mic.start();
+							$('body').addClass('bright');
+						},
+						end : function(){
+							mic.stop();
+							$('body').removeClass('bright');
+						}
+					});
+				});
+
+			}
+
+
+	</script>
+</body>
+</html>
