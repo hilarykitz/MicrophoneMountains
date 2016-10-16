@@ -1,0 +1,103 @@
+		var mic = new Tone.Microphone(), micReady;
+		var analyser = new Tone.Analyser({
+			"type" : 'fft',
+			"size" : 256,
+			"smoothing": 80,
+			"maxDecibels":220,
+			"minDecibels": -80
+		});
+
+		mic.connect(analyser);
+
+$(document).ready(function(){
+			$("input").each(function(){
+				if ($(this).attr('checked') === true) {
+					var waveVal = $(this).val();
+				}});
+		   $("input").change(function(){
+	        	waveVal = $(this).val();
+	        	reWire(waveVal);
+	        });
+
+	   	});
+
+
+			//indicate if the microphone is supported or not
+			if (!Tone.Microphone.supported){
+				$("<div>", {
+					"id" : "NotSupported",
+					"text" : "getUserMedia is not supported by your browser."
+				}).appendTo("#micContent");
+			} else {
+
+				mic.open(function(){
+
+					var canvas = $("<canvas>").appendTo("#micContent");
+					var canvas2 = $("<canvas>").appendTo("#micContent").attr('class','overlay1');
+
+					var context = canvas.get(0).getContext("2d");
+					var context2 = canvas2.get(0).getContext("2d");
+
+					context.canvas.width = canvas.width();
+					context.canvas.height = canvas.height();
+					context2.canvas.width = canvas.width();
+					context2.canvas.height = canvas.height();
+
+
+					function drawLoop(){
+						var canvasWidth = context.canvas.width;
+						var canvasHeight = context.canvas.height;
+						var canvas2Width = context2.canvas.width;
+						var canvas2Height = context2.canvas.height;
+						var midWin = (window.innerHeight) / 2;
+						requestAnimationFrame(drawLoop);
+						//draw the waveform
+						context.clearRect(0, 0, canvasWidth, canvasHeight);
+						context2.clearRect(0, 0, canvasWidth, canvasHeight);
+						var values = analyser.analyse();
+						context.beginPath();
+						context.lineJoin = "round";
+						context.lineWidth = 1;
+						context.strokeStyle = "white";
+						context.fillStyle = "white";
+						context.moveTo(0, canvasHeight - (midWin));
+						context2.moveTo(0, canvasHeight - (midWin + 50));
+						context2.lineJoin = "round";
+						context2.lineWidth = 0.35;
+						context2.strokeStyle = 'rgba(255,77,35,0.5)';
+						context2.fillStyle = 'rgba(255,77,35,0.05)';
+						
+						for (var i = 1, len = values.length; i < len; i++){
+							var val = values[i] / 252;
+							var x = canvasWidth * ((3.5*i) / (len - 5));
+							var x2 = canvas2Width * ((3.5*i) / (len - 15));
+							var y = (-3.5*val) * canvasHeight + midWin;
+							var y2 = ((3.5*val) * canvas2Height) + (midWin - 50);
+							context.lineTo(x, y);
+							context2.lineTo(x2, y2);
+						}
+						context2.stroke();
+						context2.fill();
+						context.fill();
+						context.stroke();
+
+					}
+					drawLoop();
+					
+					var micBtn = new Interface.Button({
+						type : "toggle",
+						text : "Start Mic",
+						activeText : "Stop Mic",
+						start : function(){
+							mic.start();
+							$('#micContent').addClass('bright');
+						},
+						end : function(){
+							mic.stop();
+							$('#micContent').removeClass('bright');
+						}
+					});
+					console.log(micBtn);
+				});
+
+			}

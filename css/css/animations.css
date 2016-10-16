@@ -1,0 +1,142 @@
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+body {
+    font-size: 1em;
+    line-height: 1.4;
+   background-image:url(../img/foliage.svg);
+   background-color:lightyellow;
+   background-size:80px;
+
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #8CD9A3;
+    text-shadow: none;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+img {
+    vertical-align: middle;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.chromeframe {
+    margin: 0.2em 0;
+   ;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+
+/* ===== Initializr Styles ==================================================
+   Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
+   ========================================================================== */
+
+@font-face {
+    font-family:Ashbury;
+    src: url('AshburyLig.otf');
+}
+
+@font-face {
+    font-family:"CodePro";
+    src: url('../fonts/Code_Pro_Demo.otf');
+}
+
+body {
+    font: 16px/26px;
+    font-family: 'Source Sans Pro';
+     font-weight:300;
+     background-color:black;
+}
+
+
+
+.picture {
+    width:100%;
+    max-width:100%;
+    height:auto;
+   float:left;
+
+}
+
+.picture img {
+    
+    left:0;
+    right:0;
+    position:relative;
+    padding: 3%;
+    max-width:90%;
+    border:20px white solid;
+    -webkit-animation: pulse 2s infinite;
+}
+
+-webkit-keyframes "pulse" {
+    0%{-webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -o-transform: scale(1);
+        transform: scale(1);
+    }
+
+    50%{-webkit-transform: scale(0.9);
+        -moz-transform: scale(0.9);
+        -o-transform: scale(0.9);
+        transform: scale(0.9);
+    }
+
+    100%{-webkit-transform: scale(0.0.5);
+        -moz-transform: scale(0.5);
+        -o-transform: scale(0.5);
+        transform: scale(0.5);
+    }
+}
+
+.caption {
+   color: #8A882E;
+box-shadow: 7px 7px 0px 0px RGBA(205,106,112,0.5);
+background-color:white;
+    text-align:center;
+    font-weight:bold;
+    padding:2em;
+    margin-top:2em;
+    font-family:"CodePro";
+    float:left;
+    width:50%;
+     -webkit-animation: pulse 2s infinite;
+
+}
+
+.project {
+    padding:5em;
+    min-width:100%;
+    height:auto;
+    margin-bottom:5em;
+    float:left;
+}

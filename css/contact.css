@@ -1,0 +1,429 @@
+/* ==========================================================================
+   HTML5 Boilerplate styles - h5bp.com (generated via initializr.com)
+   ========================================================================== */
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+
+body {
+    font-size: 1em;
+    line-height: 1.4;
+    font-family:'Quicksand'; 
+    font-size:16px;
+    background: url(../img/monsters.png) top left no-repeat fixed; 
+    background-size:100%;
+  
+}
+
+
+  #threedeecontainer {
+    -webkit-perspective: 1000;
+    -moz-perspective: 1000;
+    -ms-perspective: 1000;
+    -o-perspective: 1000;
+    perspective: 1000;
+  }
+
+  .container {
+
+    position: absolute;
+    top: 5em;
+    left: 50%;
+    margin-left: -100px;
+
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+
+    -webkit-transform-origin: 100px 0 -100px;
+    -moz-transform-origin: 100px 0 -100px;
+    -ms-transform-origin: 100px 0 -100px;
+    -o-transform-origin: 100px 0 -100px;
+    transform-origin: 100px 0 -100px;
+  }
+
+  #c2 .offsetable {
+    background: #333;
+    color: #FFF;
+  }
+
+  .offsetable {
+    background: #FFF;
+    color: #333;
+    height: 50px;
+    margin: 0 auto 5px auto;
+    width: 200px;
+    line-height: 50px;
+    text-align: center;
+    position: relative;
+    border-radius: 0px;
+    -webkit-backface-visibility: hidden;
+    box-shadow: inset 0 0 1px rgba(0,0,0,0.3);
+
+    -webkit-transition: -webkit-transform 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+    -moz-transition: -moz-transform 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+    -ms-transition: -ms-transform 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+    -o-transition: -o-transform 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+    transition: transform 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+
+    -webkit-transform: translateZ(-100px) rotateY(0) translateZ(100px);
+    -moz-transform: translateZ(-100px) rotateY(0) translateZ(100px);
+    -ms-transform: translateZ(-100px) rotateY(0) translateZ(100px);
+    -o-transform: translateZ(-100px) rotateY(0) translateZ(100px);
+    transform: translateZ(-100px) rotateY(0) translateZ(100px);
+
+  }
+
+  .container.rotated {
+    -webkit-transform: rotateY(-90deg);
+    -moz-transform: rotateY(-90deg);
+    -ms-transform: rotateY(-90deg);
+    -o-transform: rotateY(-90deg);
+    transform: rotateY(-90deg);
+  }
+
+  #threedeecontainer.twisted .offsetable {
+    -webkit-transform: translateZ(-100px) rotateY(90deg) translateZ(100px);
+    -moz-transform: translateZ(-100px) rotateY(90deg) translateZ(100px);
+    -ms-transform: translateZ(-100px) rotateY(90deg) translateZ(100px);
+    -o-transform: translateZ(-100px) rotateY(90deg) translateZ(100px);
+    transform: translateZ(-100px) rotateY(90deg) translateZ(100px);
+  }
+
+  .livedemo {
+    width: 100px;
+    background: darkorange;
+    color: #FFF !important;
+    font-size: 14px;
+    padding: 7px 10px;
+    border-radius: 4px;
+    border: none;
+    transition: background 0.3s ease-out;
+    position: absolute;
+    top:26em;
+    left: 50%;
+    margin-left: -50px;
+  }
+
+  .livedemo:hover {
+    background: orangered;
+    box-shadow:2px 2px orange;
+  }
+
+ 
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+.hide {
+   position: absolute !important;
+   top: -9999px !important;
+   left: -9999px !important;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+img {
+    vertical-align: middle;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.chromeframe {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+ 
+ @font-face {
+    font-family: 'Quicksand';
+    src: url(..../Users/graphic/Library/Fonts/Quicksand-Regular.otf); 
+ }
+
+ @font-face {
+    font-family: 'Quicksand_Dash';
+    src: url(..../Users/hilarykitz/Library/Fonts/Quicksand_Dash.otf);
+ }
+
+
+ @font-face {
+    font-family: 'Salome';
+    src: url(../fonts/Salome.otf);
+ }
+
+ .wholething {
+    height:20em;
+    width:100%;
+    top:20em;
+    position:relative;
+ }
+
+ .tools {
+   color: darkorange;
+margin: 1em auto;
+position: absolute;
+left: 0;
+right: 0;
+width: 12.1em;
+height: 1.5em;
+font-family: 'Salome';
+font-size: 1.5em;
+ }
+
+nav {width:20%;
+    height:20em;
+margin-left:40%;
+margin-right:40%;
+background-color:white;}
+
+nav li {margin-top:50%;}
+
+
+
+
+#a {background-size:100%; 
+    font-size:10px;
+    font-family:'Quicksand_Dash'; 
+    width: 90%;
+    margin: 0 auto;
+}
+
+a:link {color:#000;}    /* unvisited link */
+a:visited {color:grey;} /* visited link */
+a:hover {color:#000; opacity:0.7; }   /* mouse over link */
+a:active {color:grey;}
+
+
+#content {overflow: auto;}
+
+.email, .mysite, .phoneaddress {
+    width: 29.3%;
+    margin: 2%;
+    text-indent: 10%;
+    float:left;
+}
+
+.small {
+font-size: 60%;
+text-align: center;
+text-shadow: 1px 1px white;
+font-family: 'Quicksand';
+
+}
+
+
+
+.head {
+    margin-right: 15%;
+    margin-top: 5%;
+    text-indent: 8%;
+}
+
+
+
+
+
+.footer {
+    font-size:80%;
+    color: #FFF;
+position: relative;
+margin-top: 90%;}
+
+}
+
+.clearfix:after { 
+   content: "."; 
+   visibility: hidden; 
+   display: block; 
+   height: 0; 
+   clear: both;
+}
+
+.shadow {
+    text-shadow:5px 2px 2px yellow;
+
+}
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+
+}
+
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
+
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+}
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
