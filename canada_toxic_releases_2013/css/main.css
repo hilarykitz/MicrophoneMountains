@@ -19,11 +19,11 @@ html {
 #map { position:absolute; top:0; bottom:0; width:100%; }
 #features {
     position:fixed;
-    background:rgba(0,0,0,0.77);
+    background:rgba(0,0,0,0.57);
     color:#fff;
     font-size:12px;
     width:200px;
-    height:260px;
+    height:200px;
     right:0;
     top:0;
     padding:18px;
