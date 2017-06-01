@@ -771,8 +771,8 @@ header {
         background-image: url(../img/kaleidoscope.png);
     }
 
-    .cww {
-        background-image: url(../img/CoolWWD.png);
+    .goeuro {
+        background-image: url(../img/goeuro.png);
         background-position: center center;
         background-color: white;
         background-size: 100%;
@@ -845,40 +845,24 @@ header {
         overflow: hidden;
     }
 
-    .goodat {
-        height: 2.5em;
-        width: 0em;
+    .jewels {
+        height: 30px;
+        width: 0;
         padding: 0;
         background-color: transparent;
-        background-image: url(../img/square.png);
+        background-size: 10px;
         border-style: solid;
-
+    }
+    .goodat {
+        background-image: url(../img/square.png);
     }
 
     .cando {
-        height: 2.5em;
-        width: 0em;
-        padding: 0;
-        /*background-color:RGB(94,83,61);*/
         background-image: url(../img/weediamond.png);
-
     }
 
     .wanttolearn {
-        height: 2.4em;
-        width: 0em;
-        padding: 0;
-        /* background-color:#161616;*/
         background-image: url(../img/circle.png);
-
-    }
-
-    .denis {
-        background-image: url(../img/denis-site.png);
-        background-position-y: 95%;
-        background-position-x: 102%;
-        background-size: 60%;
-        background-repeat: repeat;
     }
 
     .caption h3 {
