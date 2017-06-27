@@ -12,6 +12,7 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/mdlman/vendor/bundle" />
       <excludeFolder url="file://$MODULE_DIR$/mdlman_bloggy/vendor/bundle" />
     </content>
     <orderEntry type="inheritedJdk" />
