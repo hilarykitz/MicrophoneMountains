@@ -195,58 +195,8 @@ textarea {
 }
 
 body {
-    font: 16px/26px;
-    font-family: 'FuturaLight';
-     font-weight:300;
-    
+    font: 16px/26px 'FuturaLight';
 }
-
-
-.name img{
-  left:0;
-  right:0;
-  margin:0 auto;
-  position:absolute;
-  width:100%;
-  max-width:100%!important;
-}
-
-.optioncontainer {
-position: absolute;
-right: 0;
-min-width: 19.1em;
-left: 0;
-width: 100%;
- margin: 6em auto;
- font-family:"Futura", sans-serif;
-}
-
-.optioncube {
-  width:6.3em;
-  height:6.3em;
-  border-radius:50%;
-}
-
-
-.optioncube:nth-child(1) {
-float:left;
-  
-}
-
-.optioncube:nth-child(2) {
-float:right;
-}
-
-
-
-header {
-  position:fixed;
-  height:20em;
-  top:0em;
-  width:100%;
-  z-index:0;
-}
-
 
 
 @-webkit-keyframes ticker {
@@ -259,36 +209,6 @@ header {
 100% {background-position: 21px 0px;}
 }
 
-.optionbuttons a {
-cursor: pointer;
-color: #fff;
-border-radius: 50%;
-padding-bottom: 1.5rem;
-background: transparent;
-padding-top: 1.5rem;
-float: left;
-text-align: center;
-width: 90%;
-margin-left: 5%;
- 
-}
-
-.feature {
-  position:absolute!important;
-  z-index:9999999!important;
-  -webkit-transform:scale(1.5);
-  -moz-transform:scale(1.5);
-  transform:scale(1.5);
-  left:0!important;
-  right:0!important;
-  margin-top:0!important;
-  margin:0 auto!important;
-  display:inline-block!important;
-  max-width:60%!important;
-  -webkit-transition: 500ms ease-in-out;
-  transition: 500ms ease-in-out;
-  -moz-transition: 500ms ease-in-out;
-}
 .home a {
     display: inline-block;
     text-decoration: none;
