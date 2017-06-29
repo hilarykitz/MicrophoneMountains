@@ -291,7 +291,7 @@ label {
     left:0;
     right:0;
     margin:auto;
-    -webkit-filter:brightness(0.8);
+    filter:brightness(0.8);
     z-index:0;
     opacity:0;
     height:0px;
@@ -626,18 +626,6 @@ font-family: 'Codystar';
     .main aside {
         float: right;
         width: 28%;
-    }
-}
-
-@media only screen and (min-width: 1140px) {
-
-/* ===============
-    Maximal Width
-   =============== */
-
-    .wrapper {
-        width: 1026px; /* 1140px - 10% for margins */
-        margin: 0 auto;
     }
 }
 
