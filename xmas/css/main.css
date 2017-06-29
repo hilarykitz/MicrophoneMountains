@@ -1,0 +1,885 @@
+/*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:700}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:700}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}
+/*Normalize ends*/
+
+section {width:100%; float:left;height:auto; text-align:center;}
+section.intro-section {
+    min-height: 100vh;
+    text-align: justify;
+    color:#222;
+    padding:10%;
+}
+.intro-section a.btn {
+  outline:none;
+  border:1px #222 solid;
+  color:#222;
+}
+
+section div.col-sm-4 {min-height:330px;}
+
+section div.col-sm-3  {min-height:260px;}
+.centered {
+    margin: 0 auto;
+    display: block;
+    float: none;
+    width:62rem;
+    max-width:100%;
+}
+
+.background {
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+/*End General Stuff*/
+
+section#graph {
+    min-height: 100%;
+    text-align: center;
+    border:1px #FFF solid;
+    background-color:#1D5679;
+}
+
+section#sources {
+  text-align:left;
+  padding:20px 50px;
+  font-size:80%;
+  background:#676767;
+  color:#FFF;
+}
+
+#sources ul li {
+  padding:0 8px;
+}
+
+.chart-tooltip {
+            line-height: 1.5;
+            visibility: hidden;
+            width: auto;
+            text-align:left;
+            padding: 10px 20px;
+            font-size:140%;
+            position: absolute;
+            background-color:rgba(0,0,0,0.45);
+            pointer-events: none;
+            z-index: 1060;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 3px;
+        }
+.chart-tooltip span {text-align:right;float:right;}
+.slider .handle , .slider .line {position:absolute;}
+
+.slider .handle {
+  background-image:url("https://github.com/goeuro/static_content/blob/master/web/Design/ball_indicator.svg");
+  width:40px;
+  height:40px;
+  background-color:red;
+  z-index:9999999;
+  position:fixed;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #A4CFDD;
+  stroke-width: 2;
+  shape-rendering: crispEdges;
+}
+.x.axis line {display:none;}
+.x.axis text {fill:#FFF;}
+  /*#92C7E2;}*/
+#line1 , #line2{
+    width: 100%;
+    margin: 0px 0;
+    height:280px;
+    color:white;
+    font-size:10px;
+    position:relative;
+    float:left;
+    z-index:999999;
+  }
+
+#line1 {/*overflow-x:hidden;*/ overflow-y:visible; height:470px;}
+#line1 path, .cube .graph path {
+    stroke-width: 2;
+    fill:transparent;
+    z-index:99999;
+  }
+.cube .graph path {
+    fill:none;
+}
+
+.cube svg.graph {position:absolute; left:0;}
+
+h1.decday {
+    color: #FFF;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align:center;
+}
+
+g.tick {
+  fill:#FFF;
+}
+
+.sum {
+    position: absolute;
+    bottom: 5px;
+    font-size: 120%;
+    max-width: 100%;
+    min-height: 3rem;
+    padding: 1.5rem 0 1rem 0;
+    border-radius: 3px;
+    color: #FFF;
+    left: 4px;right: 4px;
+    margin: 0 auto;
+    color: #FFF;
+}
+
+.sum span {width:100%;font-size:150%;display:block;}
+
+.moves {
+  will-change: transform;
+  transform: translateZ(0);  
+  -webkit-transform: translateZ(0);  
+  -ms-transform: translateZ(0);  
+}
+
+
+.map-wave:first-child {
+left:10%;
+top:80%;
+animation-duration:4s;
+-webkit-animation-duration:4s;
+}
+.map-wave:nth-child(2) {
+left:80%;
+top:30%;
+animation-duration:8s;
+-webkit-animation-duration:8s;
+}
+.map-wave:nth-child(3) {
+left:40%;
+top:90%;
+animation-duration:6s;
+-webkit-animation-duration:6s;
+}
+.map-wave:nth-child(4) {
+left:20%;
+top:40%;
+animation-duration:5s;
+-webkit-animation-duration:5s;
+}
+.map-wave:nth-child(5) {
+left:65%;
+top:15%;
+animation-duration:4s;
+-webkit-animation-duration:4s;
+}
+.map-wave:nth-child(6) {
+left:75%;
+top:60%;
+animation-duration:7s;
+-webkit-animation-duration:7s;
+}
+
+.map-wave {
+  position:absolute;
+  animation: wave ease-in-out infinite;
+  -webkit-animation: wave ease-in-out infinite;
+}
+
+@keyframes wave {
+  0% {
+    transform:translate(0px,0px);
+
+  }
+  50% {transform:translate(0px,14px);}
+  100% {
+    transform:translateX(0px,0px);
+  }
+}
+
+@-webkit-keyframes wave {
+  0% {
+    -webkit-transform:translate(0px,0px);
+
+  }
+  50% {-webkit-transform:translate(0px,14px);}
+  100% {
+    -webkit-transform:translateX(0px,0px);
+  }
+}
+
+.shown {display:block!important;}
+
+.cube {
+  border:1px white solid; 
+  transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -webkit-transform: translateZ(0);  
+  -webkit-backface-visibility: hidden;
+  overflow:hidden;
+  padding:0;
+  transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+}
+
+
+header {width:100%; float:left; padding:40px;}
+
+#line1 svg#travel-chart {
+  position:absolute; left:0; overflow:visible;}
+
+
+.transline {
+    stroke-dasharray:2000px;
+    stroke-dashoffset: 2000px;
+}
+.transline.drawing {
+  animation: draw 8s ease-in-out forwards;
+  -webkit-animation: draw 8s ease-in-out forwards;
+  }
+
+@keyframes draw {
+  to {
+    stroke-dasharray:3000px;
+    stroke-dashoffset: 100px;
+  }
+}
+
+/*SLIDER*/
+.axis {
+  font: 10px 'Open Sans', sans-serif;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.domain {
+  fill: none;
+  stroke: #000;
+  stroke-opacity: .3;
+  stroke-width: 10px;
+  stroke-linecap: round;
+}
+
+.halo {
+  fill: none;
+  stroke: #ddd;
+  stroke-width: 8px;
+  stroke-linecap: round;
+
+}
+
+
+.days li {float:left; display:inline;margin:0 0.5% 0 0;}
+
+/*end slider*/
+
+button {
+    margin: 20px 0 0 20px;
+  }
+
+ul {padding:0;}
+
+.transportStats {
+  display:inline-block;width:100%;
+  color:#2B84B7;
+}
+
+.transportStats li {
+  background-size:100%;
+  cursor:pointer;
+  z-index:999999;
+  display:inline;
+    float: left;
+    width: 25%;
+    color: #FFF;
+}
+
+.transpicked {
+  fill:rgba(255,255,255,0.77)!important;
+  background-color:rgba(43, 132, 183, 0.4)!important;
+}
+
+.transportStats .icon {width:30px;height:30px;background-size:30px; display:inline-block; margin-right:10px;vertical-align: middle;}
+
+span[data="bus"] {background-image:url("https://github.com/goeuro/static_content/blob/master/web/Design/bus-icon.svg");  /*border-right:1px white solid;*/}
+span[data="train"] {background-image:url("https://github.com/goeuro/static_content/blob/master/web/Design/train-icon.svg");}
+span[data="plane"] {background-image:url("https://github.com/goeuro/static_content/blob/master/web/Design/plane-icon.svg");}
+span[data="car"] {background-image:url("https://github.com/goeuro/static_content/blob/master/web/Design/car-icon.svg");/* border-left:1px white solid;*/}
+
+.transline#train , .textT {
+  stroke:#F3648A;
+  color:#F3648A;
+}
+
+.transline#plane  , .textP{
+  stroke:#F7A61B;
+  color:#F7A61B;
+}
+
+.transline#bus , .textB {
+  stroke:#88CE81;
+  color:#88CE81;
+}
+
+.transline#car , .textC{
+  stroke:#8BC5E7;
+  color:#8BC5E7;
+}
+
+.center , .center.overtext {
+  position:relative;
+  float:none; display:block;
+  left:0;right:0;top:0;bottom:0;
+  margin:0 auto;
+}
+
+.center.overtext {
+position:absolute;
+}
+
+
+.bottom , .top{
+position:absolute;
+width:100%;
+left:0;bottom:0;
+}
+.top {top:0; bottom:auto;}
+
+h2.sum.blue {color:#676767;}
+
+.snowfall img {
+  position:absolute;
+  width:150px;
+  max-width:100%;
+  margin: 15% auto auto auto;
+  left:0;right:0;top:0;bottom:0;
+}
+
+.spinning {
+  width:80%;
+  max-width:120px;
+  transform-origin:center;
+  -webkit-transform-origin:center;
+  -ms-transform-origin:center;
+  height:auto;
+  opacity:0.9;
+  animation: spinY 5s linear 0s infinite normal;
+  -webkit-animation: spinY 5s linear 0s infinite normal;
+
+}
+
+.spinning:nth-child(2) {
+  animation-duration:3s;
+  -webkit-animation-duration:3s;
+}
+
+@keyframes spinY {
+  from {
+    transform: rotateY(0deg);    
+  }
+
+ to {transform: rotateY(360deg);}
+}
+
+@-webkit-keyframes spinY {
+  0% {
+    -webkit-transform: rotateY(0deg);    
+  }
+
+  100% {-webkit-transform: rotateY(360deg);}
+}
+
+
+/*Missed Flight*/
+.sad-girl{
+    width: 180px;
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute;
+    top: auto;
+    bottom: -10px;
+}
+https://github.com/goeuro/static_content/blob/master/web/Design
+.tear.flood {
+    background-color:transparent;
+    background-image: url("https://cdn-goeuro.com/static_content/web/Design/tearflood.png");    
+    background-size:50%;
+    background-repeat:repeat;
+    position: absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height: 0px;
+    max-height:35%;
+    opacity:0.8;
+    animation: tearFlood 3s linear forwards;
+    -webkit-animation: tearFlood 3s linear forwards;
+}
+
+@keyframes tearFlood {
+  0% {height:20px;}
+  100% {height:30%;}
+}
+
+@-webkit-keyframes tearFlood {
+  0% {height:20px;}
+  100% {height:30%;}
+}
+
+
+.teardrop {
+    background-image: url('https://github.com/goeuro/static_content/blob/master/web/Design/tear.svg');
+    background-size: 100%;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 40%;
+    top: 60%;
+    animation:cry 1.2s linear infinite;
+    -webkit-animation:cry 1.2s linear infinite;
+}
+
+.teardrop:nth-child(3) {
+    left: 54%;
+    top: 58%;
+    animation: cry 1.75s linear infinite;
+    -webkit-animation: cry 1.75s linear infinite;
+}
+
+
+@keyframes cry {
+    0% {margin-top:0%;}
+  100% {margin-top:100%;}
+}
+
+.missed-plane {
+  animation:takeoff 5s linear infinite;
+  -webkit-animation:takeoff 5s linear infinite;
+  width:50px;height:50px;background-size:100%;
+  position:absolute;
+  background-image:url("https://github.com/goeuro/static_content/blob/master/web/Design/missed-plane.svg");
+}
+
+@keyframes takeoff {
+  0% {bottom:20%; left:-50px;}
+  100% {bottom:100%; left:100%;}
+}
+
+@-webkit-keyframes takeoff {
+  0% {bottom:20%; left:-50px;}
+  100% {bottom:100%; left:100%;}
+}
+
+
+.luggage {
+    height: 100%;
+    width:100%;
+    overflow:hidden;
+    position:absolute;
+    bottom: 0;
+}
+
+#baggage img , .sweetWrap img{
+  position:absolute;
+  bottom:-20px;
+  left:0;
+  width:100%;
+}
+
+.luggage .bag  {
+  width:50px;
+  height:50px;
+  overflow:visible;
+  position:absolute;
+  left:0;
+  opacity:0;
+}
+
+
+.luggage img {
+    width: 60px;
+    height:60px;
+    bottom:0;
+    position:absolute;
+    float:left;
+}
+
+.bounce-in {
+  animation: bounce-in .5s forwards ease-in;
+  -webkit-animation: bounce-in .5s forwards ease-in;
+}
+
+@keyframes bounce-in {
+  0% {opacity:0; margin-top:-100%;}
+  80% {opacity:1;margin-top:0px;}
+  90% {opacity:1;margin-top:-3px;}
+  100% {opacity:1;margin-top:0px;}
+}
+
+.cube.weight {background:#8BC5E7;}
+
+.scale.center {
+      width: 165px;
+    margin-top: 50px;
+    position: absolute;
+}
+.needle:before {
+    background: #d82326;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: -2px;
+}
+.needle {
+    width: 5px;
+    height: 80px;
+    background: #D82326;
+    border-radius: 50% 50% 0 0;
+    display: inline-block;
+    margin-top: 60px;
+    animation: point 3s infinite;
+    -webkit-animation: point 3s infinite;
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform-origin: bottom;
+    -webkit-transform-origin: bottom;
+}
+/*
+.granny img {
+   animation: rock 3s infinite;
+    -webkit-animation: rock 3s alternate infinite;
+    transform-origin: bottom;
+    -webkit-transform-origin: bottom;
+}
+
+@keyframes rock {
+  0% {transform:rotate(-15deg);}
+  100% {transform:rotate(15deg);}
+}
+*/
+@keyframes point {
+    0% {
+        transform:rotate(-45deg);
+    }
+    38% {
+        transform:rotate(45deg);
+    }
+    40% {
+        transform:rotate(47deg);
+    }
+    42% {
+        transform:rotate(45deg);
+    }
+    44% {
+        transform:rotate(47deg);
+    }
+    46% {
+        transform:rotate(45deg);
+    }
+    48% {
+        transform:rotate(47deg);
+    }    
+    50% {
+        transform:rotate(45deg);
+    }
+    52% {
+        transform:rotate(47deg);
+    }
+        54% {
+        transform:rotate(45deg);
+    }
+        56% {
+        transform:rotate(47deg);
+    }
+        58% {
+        transform:rotate(45deg);
+    }
+    100% {
+        transform:rotate(-45deg);
+    }
+}
+
+/*Skiing*/
+.ski {background-size:cover;background-image:url('https://github.com/goeuro/static_content/blob/master/web/Design/skiiers.png');}
+.skiier {width:60px; height:auto; position:absolute; right:-90px; top:10px;}
+
+
+.skiier:nth-child(2) {
+ margin-left:80px;
+}
+
+.skiier:nth-child(3) {
+  width:90px;
+  top:50px;
+}
+/*UK*/
+
+.uk-in , .uk-out {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: transparent;
+    overflow: hidden;
+}
+
+.flood {
+    width:100%;height:100%;
+    position:absolute;
+    background:#2785B8;
+}
+
+.flood.up {
+  animation: floodUp 6s ease-in-out forwards;
+  -webkit-animation: floodUp 6s ease-in-out forwards;
+}
+
+@keyframes floodUp {
+  0% {top:100%;}
+  100% {top:30%;}
+} 
+
+
+.flood.down {
+  animation: floodDown 6s ease-in-out forwards;
+  -webkit-animation: floodDown 6s ease-in-out forwards;
+  background:#8BC4E4;
+}
+
+@keyframes floodDown {
+  0% {top:00%;}
+  100% {top:65%;}
+} 
+ 
+
+.ball {
+    position: absolute;
+    top: 50%;
+    right: 12%;
+    background-image: url("https://github.com/goeuro/static_content/blob/master/web/Design/beachball.svg");
+    width: 40px;
+    height: 40px;
+    background-size: 100%;
+    z-index: 9999;
+}
+
+.uk-stencil {
+  position:absolute;
+  top:0;left:0;
+  height:100%;
+  width:100%;
+  background-image:url("https://github.com/goeuro/static_content/blob/master/web/Design/UK.svg");
+  background-size:cover;
+  z-index:999;
+}
+
+.uk-stencil h2.sum {color:#676767;}
+
+.travelDots img {
+    width: 70%;
+    margin-top: 13%;
+  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+
+}
+
+/*Sweets */
+
+
+.sweetWrap {
+width:100%;
+height:100%;
+position:absolute;
+}
+
+.sweet .piling {
+  width:60px;
+  height:60px;
+  position:absolute;
+  top:-70px;left:auto;right:40px;margin:0 auto;
+  background-repeat:no-repeat;
+  background-image:url("https://github.com/goeuro/static_content/blob/master/web/Design/cookie1.svg");
+  background-size:100%;
+}
+
+
+.sweet .piling:nth-child(2n+2){
+  animation-duration:1.5s;
+  left:40px; right:auto;
+  background-image:url("https://github.com/goeuro/static_content/blob/master/web/Design/cookie2.svg");
+}
+
+
+.tree-gif {width:100%; height:100%;}
+/*Beach*/
+
+
+.oceanback {
+    background-color:#8BC5E7;
+    height: 42%;
+
+}
+
+.waves {
+    bottom: 0;
+    left: 0;
+    width: 120%;
+    height: 50%;
+    position: absolute;
+    background-image: url("https://github.com/goeuro/static_content/blob/master/web/Design/ocean.svg");
+    opacity: 0.8;
+    animation: carousel 200s linear infinite;
+    -webkit-animation: carousel 200s linear infinite;
+    background-color: transparent;
+    background-position-y: 0px;
+    background-size: 100%;
+}
+.wave2 {
+    width: 100%;
+    bottom: 0px;
+    background-position-y: 0;
+    background-position-x:-15px;
+    background-origin: content-box;
+    background-blend-mode: darken;
+    animation: breathe 5s alternate infinite ease-in-out;
+    -webkit-animation: breathe 5s alternate infinite ease-in-out;
+  }
+
+@keyframes breathe {
+  0% {transform:scale(1); }
+  100% {transform:scale(1.1); }
+}
+
+.beachbods , .trees {
+  position:absolute;
+  height:50%;
+  background-image:url('https://github.com/goeuro/static_content/blob/master/web/Design/beachbods.svg');
+  background-size:100%;
+  background-position:center center;
+  background-repeat:repeat-x;
+  -webkit-animation: carousel 120s linear infinite;
+  animation: carousel linear 120s infinite;
+}
+
+@keyframes carousel {
+  from {background-position:0 0;}
+  to {background-position:5000px 0;}
+}
+
+.trees {
+  background-image:url("https://github.com/goeuro/static_content/blob/master/web/Design/xmas-tree.svg");
+  background-size:100px;
+  margin-top:30px;
+}
+
+.money img {bottom:20%;padding:10%;}
+
+/*Booze Consumption*/
+img.bottle {
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 65%;
+    z-index:9;
+  /*  animation: pour 2s linear infinite;*/
+}
+
+svg#booze-flow , svg#booze-full {
+    top: 38%;
+    position: absolute;
+    right: -156px;
+    fill: #FFE385!important;
+  }
+
+  svg#booze-flow.flow{
+    animation: pourBooze 3s alternate infinite;
+
+}
+
+@keyframes pourBooze {
+  0% {transform:rotate(0deg) scaleX(1);}
+  100% {transform:rotate(3deg) scaleX(4);}
+}
+
+svg#booze-full.flow {
+  animation:fillBooze 3s alternateinfinite;
+  -webkit-animation:fillBooze 3s alternate infinite;
+}
+
+@keyframes fillBooze {
+  0% {top:60%; left:-40%;}
+  100% {top:45%; left:10%;}
+  }
+
+.booze .tear.flood {
+  background-color:#FFE385;
+  bottom:-20px;
+  opacity:1;
+}
+
+
+.snow{
+  display:none;
+  background: none;
+  font-family: Androgyne;
+  background-image: url('https://github.com/goeuro/static_content/blob/master/web/Design/snow.svg');
+  height: 100%;
+  background-size:300px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index:1;
+}
+.snow.snowing
+  -webkit-animation: snow 10s linear infinite;
+  -moz-animation: snow 10s linear infinite;
+  -ms-animation: snow 10s linear infinite;
+  animation: snow 10s linear infinite;
+}
+@keyframes snow {
+  0% {background-position:  0px 0px;}
+  50% {background-position:-100px 150px;}
+  100% {background-position: -100px 300px;}
+}
+@-moz-keyframes snow {
+  0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+  50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+  100% {background-position: 400px 1000px, 200px 400px, 100px 300px;}
+}
+@-webkit-keyframes snow {
+  0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+  50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+  100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
+}
+@-ms-keyframes snow {
+  0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+  50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+  100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
+}
+
+/*----------------MOBILE ONLY----------------*/
+@media screen and (max-width:480px) {
+.cube.col-xs-12 {
+    min-height: 400px;
+}
+
+.transportStats li {
+    width: 50%;
+    text-align: center;
+}
+
+}

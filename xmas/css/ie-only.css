@@ -1,0 +1,9 @@
+.transline {
+    stroke-dasharray:none!important;
+    stroke-dashoffset:none!important;
+}
+.transline.drawing {
+  animation:none!important;
+}
+
+
