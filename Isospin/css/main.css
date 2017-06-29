@@ -1,0 +1,34 @@
+body {
+	font-family:'Futura', 'Helvetica-Neue', sans-serif;
+	font-weight:100;
+	-webkit-font-smoothing:antialiased;
+background-image: linear-gradient(-180deg, #444444 0%, #162A48 100%);
+}
+
+.spin, .spin2 {
+	width:500px;
+	height:500px;
+	background-size:100%;
+	background-image:url("../img/Iso_spinner.png");
+	position:absolute;
+	left:0;right:0;margin:15rem auto;
+}
+
+.spin:nth-child(2n+2) {
+	background-image:url("../img/2.png");
+}
+
+
+	/*-webkit-animation: fade 400ms linear forward;
+}
+
+
+
+@-webkit-keyframes fade {
+	0% {opacity:0;}
+	100% {opacity:1;}
+}*/
+@media only (screen and max-width:480px) {
+	.spin {width:300px; height:300px;}
+
+}

@@ -1,0 +1,770 @@
+/* ==========================================================================
+   HTML5 Boilerplate styles - h5bp.com (generated via initializr.com)
+   ========================================================================== */
+
+html,
+button,
+input,
+select,
+textarea {
+    color: cadetblue;
+    border:0px solid transparent;
+    background-color:whitesmoke;
+}
+
+textarea, 
+pre {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  border: 0;
+}
+body {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+img {
+    vertical-align: middle;
+}
+
+button {
+    padding-top:0.5em; padding-bottom:0.5em; font-family:"Futura"; border-radius:5px; background-color:white; float:right; margin:1em;
+}
+
+input {
+    font-family:"Futura";
+}
+
+a {
+text-decoration:none;
+color:cadetblue;}
+
+#from, #to {
+background-image: url(../img/banner.png);
+font-family: 'Futura';
+margin-left: 1.2em;
+width: 88%;
+max-width: 960px;
+background-size: 100%;
+height: 2.65em;
+border: none;
+border-radius: 3px;
+padding:0 2rem;
+}
+
+#outputDiv {
+    font-family:"Futura";
+    color:white;
+
+}
+
+.sendorclear {
+ padding: 1em;
+font-family: 'Codystar';
+float:left;
+margin-top:1em;
+z-index:3000;
+background-color:transparent!important;
+}
+
+input[type="submit"] {
+    position:absolute;
+    left:0;
+    right:0;
+    margin:15px auto;
+    padding:0 15px;
+    background-color:#ebf2f7;
+    border-radius:5px;
+}
+
+.submitholder {
+      position:absolute;
+    left:0;
+    right:0;
+    margin:auto;
+    width:13.5em;
+    height:5em;
+    z-index:0;
+}
+
+.chromeframe {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+p {
+    font-family:"Futura";
+    color:#333;
+}
+
+
+/* ===== Initializr Styles ==================================================
+   Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
+   ========================================================================== */
+
+body {
+    font: 16px/26px "Futura";
+}
+html,body {
+ width: 100%;
+    height: 100%;
+    max-width:100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; }
+
+  #map { max-height: 100%; max-width:100%; display:none;}
+
+.wrapper {
+    width: 100%;
+}
+
+/* ===================
+    ALL: Orange Theme
+   =================== */
+
+.header-container {
+    border-bottom: 20px solid #e44d26;
+}
+
+.footer-container,
+.main aside {
+    border-top: 20px solid #e44d26;
+}
+
+.header-container,
+.footer-container,
+.main aside {
+    background: #f16529;
+}
+
+.title {
+    color: white;
+}
+
+/* ==============
+    MOBILE: Menu
+   ============== */
+
+nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    display: block;
+    margin-bottom: 10px;
+    padding: 15px 0;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    /*background: #e44d26; */
+}
+
+nav a:hover,
+nav a:visited {
+    color: white;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* ==============
+    MOBILE: Main
+   ============== */
+
+
+.main article h1 {
+    font-size: 2em;
+}
+
+
+.footer-container footer {
+    color: white;
+    padding: 20px 0;
+}
+
+.main-container {
+    background-color:#20231e;
+    width:100%;
+    height:100%;
+    min-height:90em;
+    position:relative;
+    z-index:0;
+}
+
+.fromlabel{
+    margin-left:10%;
+    font-size:1.5em;
+}
+.tolabel {
+    margin-left:13%;
+    font-size:1.5em;
+}
+/* ===============
+    ALL: IE Fixes
+   =============== */
+
+.ie7 .title {
+    padding-top: 20px;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+.lamp {
+    position:absolute;
+    z-index:-1;
+}
+
+
+
+pre {display:none;}
+
+
+
+label {
+    color:white!important;
+    margin-left:15%;
+    margin-bottom:0;
+    text-align:left;
+    font-family:"Codystar";
+}
+
+
+
+.ribbons {
+    margin-top:2.8em;
+    text-indent:1.3em;
+    max-width:95%;
+}
+
+.ribbons ul li:first-child {margin-left:3.9em;}
+.ribbons ul li:nth-child(2) {margin-left:1.4em; margin-top:1em; padding-right:40px;}
+
+/*shown map style:*/
+.show {
+    opacity:1!important;
+ height:262px!important;
+}
+
+#map-canvas {
+    height:250px;
+    max-height:40%;
+    max-width:80%;
+    max-width: 80%;
+    margin-left: 10%;
+
+}
+
+#map {
+    width:500px;
+    max-width:90%;
+    max-height:70%;
+    position:relative;
+    left:0;
+    right:0;
+    margin:auto;
+    -webkit-filter:brightness(0.8);
+    z-index:0;
+    opacity:0;
+    height:0px;
+    border: solid 1px;
+    
+    /*margin: 0 20px 0 20px; */
+}
+#container {
+  padding: 0 20px 0 20px;
+  width: 700px;
+}
+
+.controls {
+    top: 8.2em;
+left: 40%;
+position: absolute;
+background-color:transparent!important;
+border:none!important;
+}
+
+#from-link {
+    position:absolute;
+    left:40%;
+}
+
+#pac-input {
+       color:seagreen!important;
+       font: 16px/26px "Futura";
+}
+
+
+#user_entrance a {
+    text-decoration:none;
+    color:seagreen;
+    background-color:whitesmoke;
+    padding:0.5em;
+    border-radius:0.25em;
+    cursor:pointer;
+}
+
+}
+.signup {
+    float:left;
+    background-color:whitesmoke;
+    border-radius:10px;
+    width:5em;
+    height:40px;
+}
+
+
+
+
+.cabstand {
+    height:16em;
+    width:100%;
+    z-index:0;
+}
+
+/*#fare {
+    position: absolute;
+height: 4em;
+width: 20em;
+top: 16.3em;
+left: 4em;
+right: 0;
+margin: auto;
+
+}*/
+
+#fare p {
+    font-family:"FUTURA";
+    color:#51504d;
+    font-size:4em;
+    text-align:center;
+    position:absolute;
+    top:0em;
+    margin:0 2em 0 0;
+    line-height:0em;
+}
+
+.distance_road {
+    font-size:6em;
+    font-family:"Futura";
+    color: cadetblue;
+    position:absolute;
+    left:0;
+    right:0;
+    margin:auto;
+    width:20em;
+    max-width:320px;
+    top:3.8em;
+ 
+}
+
+
+
+.cabimg {
+    background-image:url(../img/cab.png);
+    position:absolute;
+    width:80%;
+    height:60%;
+    max-width:600px;
+    left:0;right:0;margin:auto;
+    background-size:100%;
+    background-repeat: no-repeat;
+    margin-top:2em;
+    z-index:-1;
+}
+
+.transit {
+    background-image:url(../img/transit.png);
+    background-size:100%;
+    background-repeat: no-repeat;
+    width:202px;
+    height:68px;
+    position:absolute;
+    left:0.5em;right:0;margin:4em auto;
+    -webkit-transition:0.3s;
+}
+
+
+.dial {
+    background-image: url(../img/dial.png);
+    width:65px;
+    height:65px;
+    background-size:100%;
+    background-repeat: no-repeat;
+    position:relative;
+    z-index:2;
+    top:-6em;
+   left:0em;
+   right:0em;
+   margin:auto;
+}
+
+.dial a {
+    font-family:"Futura";
+    text-decoration: none;
+}
+
+.dial p {
+    text-align:center;
+    color:cadetblue;
+   line-height: 1.6em;
+padding-top: 0.5em;
+
+}
+
+
+.traffic {
+height: 1em;
+width: 16em;
+position: absolute;
+left: -2em;
+right: 0;
+margin: 12.8em auto;
+z-index: 4;
+box-sizing: border-box;
+}
+
+
+.credit {
+    max-width:100%;
+}
+
+#bottombuttons {
+height: 60px;
+width: 100%;
+max-width:100%;
+bottom: 0em;
+position:fixed;
+z-index:10;
+}
+
+#bottombuttons p {
+    text-align:center;
+    width:12em;
+    max-width:100%;
+}
+.myplaces {
+    position:fixed;
+    bottom:0em;
+    height:60px;
+    width:100%;
+    max-width:100%;
+    background-color:#333;
+    padding-top:5px;
+}
+
+.myplaces ul li {
+    width:27%;
+    margin-left:2%;
+    margin-right:2%;
+    height:60px;
+    float:left;
+    background-repeat: no-repeat;
+    box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+}
+
+.myplaces ul li a {
+    width:4em;
+    height:4em;
+}
+
+.myplaces ul li:first-child {
+    background-image:url(../img/work_icon.png);
+    margin-left:2em;
+
+}
+
+.myplaces ul li:nth-child(2) {
+    
+    background-image:url(../img/home_icon.png);
+}
+
+.myplaces ul li:nth-child(3) {
+    background-image:url(../img/saved_icon.png);
+    
+}
+
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media only screen and (min-width: 480px) {
+
+/* ====================
+    INTERMEDIATE: Menu
+   ==================== */
+
+    nav a {
+        float: left;
+        width: 27%;
+        margin: 0 1.7%;
+        padding: 25px 2%;
+        margin-bottom: 0;
+    }
+
+    nav li:first-child a {
+        margin-left: 0;
+    }
+
+    nav li:last-child a {
+        margin-right: 0;
+    }
+
+/* ========================
+    INTERMEDIATE: IE Fixes
+   ======================== */
+
+    nav ul li {
+        display: inline;
+    }
+
+    .oldie nav a {
+        margin: 0 0.7%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+/* ====================
+    WIDE: CSS3 Effects
+   ==================== */
+
+.cabimg {
+    background-image:url(../img/cab.png);
+    position:absolute;
+    width:350px;
+    min-height:200px;
+    left:0;right:0;margin:auto;
+    background-size:350px;
+    background-repeat: no-repeat;
+    margin-top:2em;
+}
+
+#map-canvas {
+    height:600px;
+    max-height:70%;
+    max-width:80%;
+    max-width: 80%;
+    margin-left: 10%;
+}
+
+
+
+.sendorclear {
+padding: 1em;
+font-family: 'Codystar';
+}
+
+
+.signup {
+    margin-left:-0.8em;
+}
+
+    .header-container,
+    .main aside {
+        -webkit-box-shadow: 0 5px 10px #aaa;
+           -moz-box-shadow: 0 5px 10px #aaa;
+                box-shadow: 0 5px 10px #aaa;
+    }
+
+/* ============
+    WIDE: Menu
+   ============ */
+
+    .title {
+        float: left;
+    }
+
+    nav {
+        float: right;
+        width: 38%;
+    }
+
+/* ============
+    WIDE: Main
+   ============ */
+
+    .main article {
+        float: left;
+        width: 57%;
+    }
+
+    .main aside {
+        float: right;
+        width: 28%;
+    }
+}
+
+@media only screen and (min-width: 1140px) {
+
+/* ===============
+    Maximal Width
+   =============== */
+
+    .wrapper {
+        width: 1026px; /* 1140px - 10% for margins */
+        margin: 0 auto;
+    }
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+}
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}

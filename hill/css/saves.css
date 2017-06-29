@@ -1,0 +1,301 @@
+
+@media only screen and (max-width: 680px) {
+form[name="work"] {
+
+    height: 12.94642857142857em;
+    top:2em;
+    display: none;
+
+}
+form[name="home"] {
+
+    height: 12.94642857142857em;
+    top:2em;
+    display: none;
+}
+form[name="misc"] {
+
+    height: 12.94642857142857em;
+    top:2em;
+    display: none;
+}
+
+
+}
+
+.error {
+	border: 3px red solid;
+}
+
+
+form[name="login"] {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    max-width:320px;
+    margin-left:2em;
+    margin-top:5em;
+    color:white;
+    border-top: 10px white solid;
+}
+
+/*input{
+	margin-left:2.7em;
+	margin-bottom:2.7em;
+}*/
+
+
+div.user-image {
+    float: left;
+    width: 70px;
+    padding: 0 10px;
+}
+
+div.user-image img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: #8c87ab;
+}
+
+figcaption.chirp {
+    width: 530px;
+    float:left;
+    font-size:18px;
+    margin-bottom:5px;
+    min-height:35px;
+    padding: 0 10px;
+}
+
+.chirps div.name {
+    width: 70px;
+    text-align: center;
+    float:left;
+    color:#777777;
+    font-size:14px;
+    line-height:1.2em;
+}
+
+.chirps time.date {
+    float:right;
+    color:#777777;
+    font-size:14px;
+    line-height:1.2em;
+    padding: 0 10px;
+    display: block;
+}
+
+.load {
+    float:left;
+    background-color:#f1ebf6;
+    border:solid 1px #dddddd;
+    padding:10px 0 10px 0;
+    font-size:18px;
+    width:600px;
+    text-align:center;
+    cursor:pointer;
+}
+
+footer {
+    float:left;
+    width:600px;
+    padding:20px 0 10px 0;
+    text-align:right;
+}
+
+sub {
+    font-size:.8em;
+}
+
+textarea[name="chirp"] {
+    border: solid 1px #dddddd;
+    outline: none;
+    width:600px;
+    height:80px;
+    font-size: 1.5em;
+    padding: 0.5em;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.popup {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(20,20,20,0.8);
+    z-index: 1000;
+}
+
+button.login {
+    display: block;
+    position:absolute;
+    top: 0px;
+    right: 1em;
+    height: 60px;
+    width: 60px;
+    padding-bottom:39em;
+    margin: auto;
+    text-align: center;
+    line-height: 45px;
+    outline: none;
+    border: none;
+    background-image:url(../img/streetlamp.png);
+       background-repeat:no-repeat;
+    color: white;
+    background-color:transparent!important;
+    color:cadetblue;
+    text-indent:-3px;
+    text-shadow: 1px -1px white;
+    z-index:-1;
+}
+
+.logout {
+    position: absolute;
+    top: 0px;
+    right: 0.5em;
+    height: 60px;
+    width: 60px;
+    padding-bottom:39em;
+    margin: auto;
+    text-align: center;
+    line-height: 45px;
+    outline: none;
+    border: none;
+    background-image:url(../img/streetlamp.png);
+    background-repeat:no-repeat;
+    color: white;
+    background-color:transparent!important;
+    color:cadetblue;
+    text-indent:-3px;
+    text-shadow: 1px -1px white;
+    z-index:1;
+}
+
+button.new {
+position: absolute;
+top: 30em;
+right: 0;
+left: 0;
+margin: auto;
+width: 15em;
+height: 2em;
+background-color: #333;
+color: cadetblue;
+z-index: 11;
+}
+
+
+.popup form {
+    width: 400px;
+    margin: auto;
+    top:2em; right:0; left:0;
+    position: fixed;
+    color: white;
+}
+
+@media only screen and (min-width: 680px) {
+form[name="login"] {
+    height: 16.39285714285714em;
+}
+form[name="register"] {
+
+    height: 32.94642857142857em;
+    display: none;
+    position:absolute!important;
+}
+form[name="work"] {
+
+    height: 12.94642857142857em;
+    top:14em;
+    display: none;
+
+}
+form[name="home"] {
+
+    height: 12.94642857142857em;
+    top:14em;
+    display: none;
+}
+form[name="misc"] {
+
+    height: 12.94642857142857em;
+    top:42em;
+    display: none;
+}
+
+}
+.popup form label {  /*height: 15px*/
+    display: block;
+    font-weight: 100;
+    font-size: 0.75em;
+    padding-top: 0.5em;
+}
+.popup form input {  /*height: 30px*/
+    font-size: 1.25em;
+    padding: 0.5em;
+    width: 89%;
+    outline: none;
+    border: none;
+}
+.popup form output { /*height: 16px*/
+    display: block;
+    height: 1em;
+    color: #9f0b22;
+    font-weight: 900;
+}
+.popup form button { /*height: 55px*/
+    font-size: 1.25em;
+    padding: 0.5em;
+    width: 86%;
+    outline: none;
+    border: none;
+    background-color: cadetblue;
+    color: wheat;
+    margin-top: 0.75em;
+}
+
+.popup button.register {
+background-color: transparent;
+border: none;
+outline: none;
+color: wheat;
+font-size: 1em;
+text-align: right;
+padding: 0;
+margin-top: 4em;
+position: absolute;
+top: -3em;
+right: 0.5em;}
+
+.popup button.signin {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 1em;
+    text-align: right;
+    padding: 0;
+    margin: 0;
+}
+
+.savemaps {
+    background-color:transparent!important;
+
+}
+.popup form legend {
+    color: cadetblue;
+font-family: "Codystar";
+}
+}
