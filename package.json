@@ -1,0 +1,23 @@
+{
+  "name": "hilarykitz.github.io",
+  "version": "1.0.0",
+  "description": "hk repo",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hilarykitz/hilarykitz.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hilarykitz/hilarykitz.github.io/issues"
+  },
+  "homepage": "https://github.com/hilarykitz/hilarykitz.github.io#readme",
+  "dependencies": {
+    "phaser-ce": "^2.8.1",
+    "serve": "^6.0.0"
+  }
+}
